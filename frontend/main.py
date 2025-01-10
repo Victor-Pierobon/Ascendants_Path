@@ -1,10 +1,11 @@
 import flet as ft
 from frontend.components.character_form import CharacterForm
 from frontend.components.quest_list import QuestList
+from frontend.styles import AppStyles
 
 def main(page: ft.Page):
     page.title = "Ascendant's Path"
-    page.theme = "dark"
+    page.theme = AppStyles.theme
     page.padding = 50
 
 
