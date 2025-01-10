@@ -1,5 +1,5 @@
 class Quest:
-    def __init__(self, id, title, descripton, experience_reward, type, deadline, creation_date, is_completed):
+    def __init__(self, id, title, description, experience_reward, type, deadline, creation_date, is_completed):
         self.id = id
         self.title = title
         self.description = description

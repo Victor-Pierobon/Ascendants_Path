@@ -34,6 +34,15 @@ class Quest:
     def to_dict(self):
         return self.__dict__
     
+class CharacterQuests:
+    def __init__(self, character_id, quest_id, is_complited=0):
+        self.character_id = character_id
+        self.quest_id = quest_id
+        self.is_complited = is_complited
+
+    def to_dict(self):
+        return self.__dict__
+    
 # Create a new character
 def create_character(name):
     conn = get_db_connection()
@@ -114,11 +123,11 @@ def complete_quest(character_id, quest_id):
 def get_character_quests(character_id):
     conn = get_db_connection()
     cursor = conn.cursor()
-    cursor.execute("SLECT * FROM CharaceterQuests WHERE chracter_id = ?", (character_id,))
+    cursor.execute("SLECT * FROM CharacterQuests WHERE chracter_id = ?", (character_id,))
     rows = cursor.fetchall()
     conn.close()
     character_quests = []
     for row in rows:
         character_quest = CharacterQuests(row['character_id'], row['quest_id'], row['is_complited'])
-        character_quests.apped(character_quest)
+        character_quests.append(character_quest)
     return character_quests
