@@ -50,4 +50,4 @@ def main(page: ft.Page):
 
 
 if __name__ == "__main__":
-    ft.app(targer=main)
+    ft.app(target=main)
