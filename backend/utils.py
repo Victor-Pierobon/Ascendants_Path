@@ -61,7 +61,7 @@ def get_character(character_id):
     row = cursor.fetchone()
     conn.close()
     if row:
-        character = Character(row['id'], row['name'], row['level_id'], row['experience'], row['strenght'], row['agility'], row['inteligence'], row['endurance'], row['perception'])
+        character = Character(row['id'], row['name'], row['level_id'], row['experience'], row['strenght'], row['agility'], row['intelligence'], row['endurance'], row['perception'])
         return character
     return None
 

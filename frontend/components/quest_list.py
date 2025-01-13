@@ -8,9 +8,9 @@ class QuestList(ft.UserControl):
         self.quests = []
         self.new_quest_title = ft.TextField(label="Quest Title")
         self.new_quest_descprtion = ft.TextField(label="Quest Description")
-        self.new_quest_experience = ft.TextField(label="Experience Reward", input_type=ft.TextFieldInputType.Number)
+        self.new_quest_experience = ft.TextField(label="Experience Reward", input_type="number")
         self.new_quest_deadline = ft.TextField(label="Deadline (yyyy-mm-dd)")
-        self.character_id = ft.TextField(label="Character id(for test)", input_type=ft.TextFieldInputType.Number)
+        self.character_id = ft.TextField(label="Character id(for test)", input_type="number")
         self.quest_list = ft.Column()
         self.update_list()
 
