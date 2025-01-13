@@ -8,7 +8,7 @@ def create_database():
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS Characters (
             id INTEGER PRIMARY KEY,
-            name TEXT NOT NULL,
+            name TEXT NOT NULL UNIQUE,
             level_id INTEGER,
             experience INTEGER DEFAULT 0,
             strength INTEGER DEFAULT 1,
