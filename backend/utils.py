@@ -45,6 +45,8 @@ class CharacterQuests:
     
 # Create a new character
 def create_character(name):
+    if check_character_exists(name):
+        return None # Character already exists
     conn = get_db_connection()
     cursor = conn.cursor()
     cursor.execute("INSERT INTO Characters (name) VALUES (?)", (name,))
@@ -131,3 +133,13 @@ def get_character_quests(character_id):
         character_quest = CharacterQuests(row['character_id'], row['quest_id'], row['is_complited'])
         character_quests.append(character_quest)
     return character_quests
+
+def check_character_exists(name):
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM Characters WHERE name = ?", (name,))
+    row = cursor.fetchone()
+    conn.close()
+    return row is not None
+
+

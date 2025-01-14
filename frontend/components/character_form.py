@@ -25,6 +25,8 @@ class CharacterForm(ft.UserControl):
             self.created_character_text.value = f"Character {character.name} created successfully!"
             self.update()
             self.go_quests_page(None)
+        elif character_id == None:
+            self.created_character_text.value = f"A character with the name {character_name} already exists!"
         else:
             self.created_character_text.value = f"Error creating character"
             self.update()
